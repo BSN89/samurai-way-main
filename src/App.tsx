@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
-import {Rating, Star} from "./components/Rating/Rating";
+import {Rating} from "./components/Rating/Rating";
 
 
 function App() {
@@ -12,7 +12,6 @@ function App() {
             <Rating/>
             <Accordion/>
             <Rating/>
-            <Star/>
         </div>
 )
 }

@@ -4,24 +4,16 @@ export function Rating() {
     console.log("Rating rendering")
     return (
         <div>
-            <div>star</div>
-            <div>star</div>
-            <div>star</div>
-            <div>star</div>
-            <div>star</div>
+            <Star/>
+            <Star/>
+            <Star/>
+            <Star/>
+            <Star/>
         </div>
     )
 }
 
-export function Star() {
+function Star() {
     console.log("Star rendering")
-    return (
-        <div>
-            <div>Star</div>
-            <div>Star</div>
-            <div>Star</div>
-            <div>Star</div>
-            <div>Star</div>
-        </div>
-    )
+    return <span>star </span>
 }
