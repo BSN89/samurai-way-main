@@ -4,17 +4,16 @@ import Accordion from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
 
 
-function App() {
+function App(props: any) {
     console.log("App rendering")
     return (
         <div>
-            {/*<PageTitle title={"This is App component"}/>
+            <PageTitle title={"This is App component"}/>
             <PageTitle title={"My friends"}/>
-*/}
-            {/*Article 1
+            Article 1
             <Rating value={3}/>
             <Accordion titleValue={"Menu"}/>
-            <Accordion titleValue={"Users"}/>*/}
+            <Accordion titleValue={"Users"}/>
 
             Article 2
             <Rating value={0}/>
@@ -27,10 +26,13 @@ function App() {
 )
 }
 
-function PageTitle(props: any) {
-            debugger
+type PageTitlePropsType = {
+    title: string
+}
+
+function PageTitle(props: PageTitlePropsType) {
     console.log("PageTitle rendering")
-    return <h1>{props.title}</h1>
+    return <h1>{ props.title}</h1>
 }
 
 
