@@ -1,44 +1,37 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
-import Accordion from "./components/Accordion/Accordion";
-import {Rating} from "./components/Rating/Rating";
 
-
-function App(props: any) {
-    console.log("App rendering")
+const App = () => {
     return (
         <div>
-            <PageTitle title={"This is App component"}/>
-            <PageTitle title={"My friends"}/>
-            Article 1
-            <Rating value={3}/>
-            <Accordion titleValue={"Menu"}/>
-            <Accordion titleValue={"Users"}/>
+        <Header/>
+            <Technologies/>
 
-            Article 2
-            <Rating value={0}/>
-            <Rating value={1}/>
-            <Rating value={2}/>
-            <Rating value={3}/>
-            <Rating value={4}/>
-            <Rating value={5}/>
         </div>
-)
+ )
 }
 
-type PageTitlePropsType = {
-    title: string
+const Header = () => {
+    return (
+        <div>
+            <a href="#s">Home</a>
+            <a href="#s">News Feed</a>
+            <a href="#s">Message</a>
+        </div>
+    )
 }
 
-function PageTitle(props: PageTitlePropsType) {
-    console.log("PageTitle rendering")
-    return <h1>{ props.title}</h1>
+const Technologies= () =>{
+   return (
+       <div>
+        <ul>
+            <li>css</li>
+            <li>html</li>
+            <li>js</li>
+            <li>react</li>
+        </ul>
+    </div>
+   )
 }
-
-
-
-
-
-
 
 export default App;
