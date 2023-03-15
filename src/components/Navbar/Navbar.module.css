@@ -1,11 +1,12 @@
 
 .nav {
     grid-area: n;
-    background-color: burlywood;
+    background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
 }
-.item {
+.item a {
     color: white;
+    text-decoration: none;
 }
-.item.active {
+.item a.activeLink {
     color: gold;
 }
