@@ -38,7 +38,6 @@ const Dialogs = (props: DialogItemType) => {
                 <DialogItem name="Valera" id={6}/>
             </div>
             <div className={s.messages}>
-
                 <Message message="Hi"/>
                 <Message message="How are you it-kamasutra?"/>
                 <Message message="Yo"/>
