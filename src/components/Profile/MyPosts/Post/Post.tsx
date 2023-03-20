@@ -4,7 +4,7 @@ import {type} from "os";
 
 type PropsType= {
     message: string,
-    likesCount: string
+    likesCount: number
 }
 
 const Post = (props: PropsType ) => {

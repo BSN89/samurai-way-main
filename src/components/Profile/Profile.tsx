@@ -1,13 +1,19 @@
 import React from "react";
 import s from "./Profile.module.css"
-import MyPosts from "./MyPosts/MyPosts";
+import MyPosts, {PropsMyPosts} from "./MyPosts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
-const Profile = () => {
+
+
+
+const Profile = (props: PropsMyPosts) => {
     return (
         <div>
             <ProfileInfo/>
-            <MyPosts hey="Yo"/>
+            <MyPosts id={props.id}
+                  message={props.message}
+                  likesCount={props.likesCount}
+            />
         </div>
     )
 }

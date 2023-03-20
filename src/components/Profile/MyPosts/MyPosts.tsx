@@ -3,12 +3,24 @@ import s from "./MyPosts.module.css"
 import Post from "./Post/Post";
 
 
-type PropsYo = {
-    hey: string
+export type PropsMyPosts = {
+   id: number
+    message: string
+    likesCount: number
+}
+type PostDataType={
+    postData: Array<PropsMyPosts>
 }
 
-const MyPosts = (props: PropsYo) => {
 
+const MyPosts: React.FC<PropsMyPosts> = (props: PropsMyPosts) => {
+
+    let postData = [
+        {id: 1, message: "Hi, how are you?", likesCount: 12 },
+        {id: 2, message: 'It\'s my first post', likesCount: 11},
+    ]
+
+    // @ts-ignore
     return (
         <div className={s.postsBlock}>
            <h3>My posts</h3>
@@ -21,8 +33,8 @@ const MyPosts = (props: PropsYo) => {
                 </div>
             </div>
             <div className={s.posts}>
-                <Post message='Hi, how are you?' likesCount="0"/>
-                <Post message="It's my first post" likesCount="23"/>
+                <Post message={postData[0].message} likesCount={postData[0].likesCount}/>
+                <Post message={postData[1].message} likesCount={postData[1].likesCount}/>
             </div>
         </div>
     )
