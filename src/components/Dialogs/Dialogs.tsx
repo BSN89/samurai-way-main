@@ -2,6 +2,7 @@ import React from 'react'
 import s from "./Dialogs.module.css"
 import {NavLink} from "react-router-dom";
 import {message} from "antd";
+import {DialogItem} from "./Dialogitem/Dialogsitem";
 
 
 type DialogItemType = {
@@ -11,16 +12,11 @@ type DialogItemType = {
 
 type MessageType = {
     message: string
+    id: number
 }
 
 
-const DialogItem = (props: DialogItemType) => {
-    let path = "/dialogs/" + props.id
 
-    return <div className={s.dialog + ' ' + s.active}>
-        <NavLink to={path}>{props.name}</NavLink>
-    </div>
-}
 
 const Message = (props: MessageType) => {
     return <div className={s.dialog}>{props.message}</div>
@@ -44,15 +40,16 @@ const Dialogs = (props: DialogItemType) => {
         {id: 5, message: 'Yo'},
     ]
 
+    let dialogsElements = dialogsData.map(el => <DialogItem name={el.name} id={el.id}/>)
+    let messagesElements = messagesData.map(mess => <Message message={mess.message} id={mess.id}/>)
+
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
-                <DialogItem name={dialogsData[0].name} id={dialogsData[0].id}/>
-                <DialogItem name={dialogsData[1].name} id={dialogsData[1].id}/>
+                    {dialogsElements}
             </div>
             <div className={s.messages}>
-                <Message message={messagesData[0].message}/>
-                <Message message={messagesData[1].message}/>
+                {messagesElements}
             </div>
         </div>
 
