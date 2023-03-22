@@ -4,6 +4,7 @@ import s from "./../Dialogs.module.css"
 
 
 
+
 export type DialogItemType = {
     name: string
     id: number
